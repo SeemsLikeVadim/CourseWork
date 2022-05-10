@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link type="image/x-icon" rel="shortcut icon" href="img/557birthdaycake1_100853.ico">
+    <title>Кондитерская</title>
+</head>
+<body style="background-color: #CCCCCC;">
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/" th:href="@{/}">Кондитерская "ТОРТУГА"</a>
+        <button type="button" class="btn btn-light"><a href="/"  th:href="@{/logout} " style="color:black;">Выход</a></button>
+    </div>
+</nav>
+</div>
+<h1 style="color: black; text-align: center; margin-top:125px">Оформление заказа</h1>
+<form class="container"  th:action="@{/order}" method="post" th:object="${order}">
+    <div th:if="${param.success}">
+        <div class="alert alert-info">Вы успешно сделали заказ. С вами свяжется наш менеджер.</div>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Адрес доставки</label>
+        <input type="text" class="form-control"  id="formGroupExampleInput" placeholder="Адрес доставки" name="address" required autofocus="autofocus">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Дата</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Дата" name="date" required autofocus="autofocus">
+    </div>
+    <div class="form-row">
+        <label for="inputState">Название торта</label>
+        <select id="inputState1" class="form-control"  name="cake">
+            <option selected>Французский император</option>
+            <option>Шоколадное наслаждение</option>
+            <option>Медовый экстаз</option>
+        </select>
+    </div>
+    <br>
+    <br>
+    <div class="col-12" style="text-align: center;">
+        <button class="btn btn-primary" type="submit" style="background-color: red">Отправить форму</button>
+    </div>
+</form>
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+-->
+</body>
+</html>
